@@ -27,10 +27,14 @@ class LoginPage extends StatelessWidget {
                               width: 100,
                               height: 100)),
                       const SizedBox(height: 50),
-                      const Center(
+                      Center(
                         child: TextField(
+                          controller: controller.controller,
                           decoration: InputDecoration(
-                              border: OutlineInputBorder(),
+                              border: const OutlineInputBorder(),
+                              errorText: controller.validate.value == true
+                                  ? "Value Can't Be Empty"
+                                  : null,
                               labelText: 'Enter mobile number',
                               hintText: 'Enter 10 digit mobile no.'),
                         ),
@@ -40,7 +44,12 @@ class LoginPage extends StatelessWidget {
                         style: Constants.getRaisedButtonStyle(
                             size: Constants.mediumButtonSize),
                         onPressed: () {
-                          Get.toNamed(AppRoutes.otp);
+                          Get.showSnackbar(GetSnackBar(title: "onClick: ",message: controller.validate.value.toString()));
+
+                          if (controller.validate.value != null &&
+                              controller.validate.value!=true) {
+                            Get.toNamed(AppRoutes.otp);
+                          }
                         },
                         child: const Text('NEXT'),
                       )
