@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:video_recorder_flutter_demo/modules/login/login_Binding.dart';
+import 'package:video_recorder_flutter_demo/modules/login/login_page.dart';
 import 'package:video_recorder_flutter_demo/routes/app_pages.dart';
 
-import 'modules/home/home_Binding.dart';
-import 'modules/home/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,9 +19,9 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Video Recorder Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      initialBinding: HomeBinding(),
-      home: HomePage(),
+      theme: ThemeData(primarySwatch: Colors.yellow),
+      initialBinding: LoginBinding(),
+      home: const LoginPage(),
       getPages: AppPages.pages,
     );
   }
