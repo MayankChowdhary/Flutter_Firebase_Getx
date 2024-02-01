@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_recorder_flutter_demo/modules/login/login_controller.dart';
-import 'package:video_recorder_flutter_demo/routes/app_routes.dart';
 
 import '../../constants.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class OTPPage extends StatelessWidget {
+  const OTPPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<LoginController>(
         builder: (controller) => Scaffold(
               appBar: AppBar(
-                title: const Text('Login Page'),
+                title: const Text('OTP Page'),
                 backgroundColor: Colors.yellow,
               ),
               body: SingleChildScrollView(
@@ -31,18 +30,23 @@ class LoginPage extends StatelessWidget {
                         child: TextField(
                           decoration: InputDecoration(
                               border: OutlineInputBorder(),
-                              labelText: 'Enter mobile number',
-                              hintText: 'Enter 10 digit mobile no.'),
+                              labelText: 'Enter OTP',
+                              hintText: 'Enter 6 digit OTP'),
                         ),
+                      ),
+                      const SizedBox(height: 10),
+                      const Align(
+                        alignment: Alignment.centerRight,
+                        child: Text("Did not get OTP, resend?",
+                            style: TextStyle(
+                                color: Colors.blueAccent, fontSize: 14)),
                       ),
                       const SizedBox(height: 60),
                       ElevatedButton(
                         style: Constants.getRaisedButtonStyle(
                             size: Constants.mediumButtonSize),
-                        onPressed: () {
-                          Get.toNamed(AppRoutes.otp);
-                        },
-                        child: const Text('NEXT'),
+                        onPressed: () {},
+                        child: const Text('Get Started'),
                       )
                     ])),
               ),

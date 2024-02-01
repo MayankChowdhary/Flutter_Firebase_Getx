@@ -1,6 +1,7 @@
 
 import 'package:get/get.dart';
 import 'package:video_recorder_flutter_demo/modules/login/login_Binding.dart';
+import 'package:video_recorder_flutter_demo/modules/login/otp_page.dart';
 
 import '../modules/home/home_Binding.dart';
 import '../modules/home/home_page.dart';
@@ -16,7 +17,12 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.login,
-      page: () => LoginPage(),
+      page: () => const LoginPage(),
+      binding: LoginBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.otp,
+      page: () =>  const OTPPage(),
       binding: LoginBinding(),
     ),
   ];
