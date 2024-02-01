@@ -13,7 +13,7 @@ class LoginController extends GetxController{
     super.onInit();
     controller.addListener(() {
       validate(controller.text.isBlank == true);
-      Get.showSnackbar(GetSnackBar(title: "controller: ",message: validate.value.toString()));
+     // Get.showSnackbar(GetSnackBar(title: "controller: ",message: validate.value.toString()));
 
     });
   }

@@ -28,26 +28,28 @@ class LoginPage extends StatelessWidget {
                               height: 100)),
                       const SizedBox(height: 50),
                       Center(
-                        child: TextField(
-                          controller: controller.controller,
-                          decoration: InputDecoration(
-                              border: const OutlineInputBorder(),
-                              errorText: controller.validate.value == true
-                                  ? "Value Can't Be Empty"
-                                  : null,
-                              labelText: 'Enter mobile number',
-                              hintText: 'Enter 10 digit mobile no.'),
-                        ),
+                        child: Obx(() => TextField(
+                              controller: controller.controller,
+                              decoration: InputDecoration(
+                                  border: const OutlineInputBorder(),
+                                  errorText: controller.validate.value == true
+                                      ? "Value Can't Be Empty"
+                                      : null,
+                                  labelText: 'Enter mobile number',
+                                  hintText: 'Enter 10 digit mobile no.'),
+                            )),
                       ),
                       const SizedBox(height: 60),
                       ElevatedButton(
                         style: Constants.getRaisedButtonStyle(
                             size: Constants.mediumButtonSize),
                         onPressed: () {
-                          Get.showSnackbar(GetSnackBar(title: "onClick: ",message: controller.validate.value.toString()));
+                          /*Get.showSnackbar(GetSnackBar(
+                              title: "onClick: ",
+                              message: controller.validate.value.toString()));*/
 
                           if (controller.validate.value != null &&
-                              controller.validate.value!=true) {
+                              controller.validate.value != true) {
                             Get.toNamed(AppRoutes.otp);
                           }
                         },
