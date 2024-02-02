@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:video_recorder_flutter_demo/modules/login/login_controller.dart';
 import 'package:video_recorder_flutter_demo/routes/app_routes.dart';
 
-import '../../constants.dart';
+import '../../utils/constants.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});

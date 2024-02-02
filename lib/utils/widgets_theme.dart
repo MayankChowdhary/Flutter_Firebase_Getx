@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 
- class Constants {
-  static const Size mediumButtonSize = Size(200, 50);
-  static const Size smallButtonSize = Size(100, 50);
-  static const Size largeButtonSize = Size(300, 50);
+import 'constants.dart';
 
-   static ButtonStyle getRaisedButtonStyle({Size size = Constants.mediumButtonSize}) {
+class WidgetsTheme{
+  static ButtonStyle getRaisedButtonStyle({Size size = Constants.mediumButtonSize}) {
     return ElevatedButton.styleFrom(
       foregroundColor: Colors.white,
       backgroundColor: Colors.blueGrey,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_recorder_flutter_demo/modules/login/login_controller.dart';
 
-import '../../constants.dart';
+import '../../utils/constants.dart';
 
 class OTPPage extends StatelessWidget {
   const OTPPage({super.key});
