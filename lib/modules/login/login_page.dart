@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_recorder_flutter_demo/modules/login/login_controller.dart';
 import 'package:video_recorder_flutter_demo/routes/app_routes.dart';
+import 'package:video_recorder_flutter_demo/utils/widgets_theme.dart';
 
 import '../../utils/constants.dart';
 
@@ -41,14 +42,14 @@ class LoginPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 60),
                       ElevatedButton(
-                        style: Constants.getRaisedButtonStyle(
+                        style: WidgetsTheme.getRaisedButtonStyle(
                             size: Constants.mediumButtonSize),
                         onPressed: () {
                           if (controller.validate.value != null &&
                               controller.validate.value != true) {
                             Get.toNamed(AppRoutes.otp);
                           } else {
-                            Get.showSnackbar(Constants.getSnackbarError(
+                            Get.showSnackbar(WidgetsTheme.getSnackbarError(
                                 "Value Can't Be Empty"));
                           }
                         },

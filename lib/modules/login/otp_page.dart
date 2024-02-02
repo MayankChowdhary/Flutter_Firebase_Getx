@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_recorder_flutter_demo/modules/login/login_controller.dart';
+import 'package:video_recorder_flutter_demo/utils/widgets_theme.dart';
 
 import '../../utils/constants.dart';
 
@@ -43,7 +44,7 @@ class OTPPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 60),
                       ElevatedButton(
-                        style: Constants.getRaisedButtonStyle(
+                        style: WidgetsTheme.getRaisedButtonStyle(
                             size: Constants.mediumButtonSize),
                         onPressed: () {},
                         child: const Text('Get Started'),
