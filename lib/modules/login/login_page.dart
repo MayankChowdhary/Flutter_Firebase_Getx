@@ -48,12 +48,8 @@ class LoginPage extends StatelessWidget {
                               controller.validate.value != true) {
                             Get.toNamed(AppRoutes.otp);
                           } else {
-                            Get.showSnackbar(const GetSnackBar(
-                              title: "Invalid mobile number",
-                              message: "Value Can't Be Empty",
-                              icon: Icon(Icons.warning),
-                              duration: Duration(seconds: 3),
-                            ));
+                            Get.showSnackbar(Constants.getSnackbarError(
+                                "Value Can't Be Empty"));
                           }
                         },
                         child: const Text('NEXT'),

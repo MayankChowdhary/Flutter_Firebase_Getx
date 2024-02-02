@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/snackbar/snackbar.dart';
 
  class Constants {
   static const Size mediumButtonSize = Size(200, 50);
@@ -14,6 +15,16 @@ import 'package:flutter/material.dart';
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(2)),
       ),
+    );
+  }
+
+  static GetSnackBar getSnackbarError(String message){
+    return  GetSnackBar(
+      title: "Error",
+      message: message,
+      backgroundColor: Colors.blueGrey,
+      icon: const Icon(Icons.warning,color: Colors.yellow,),
+      duration: const Duration(seconds: 3),
     );
   }
 }
