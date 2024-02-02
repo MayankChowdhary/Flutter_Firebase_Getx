@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,9 +11,12 @@ class LoginController extends GetxController{
     // TODO: implement onInit
     super.onInit();
     controller.addListener(() {
-      validate(controller.text.isBlank == true);
-     // Get.showSnackbar(GetSnackBar(title: "controller: ",message: validate.value.toString()));
+      if(validate.value!=null || controller.text.isBlank!=true) {
+        validate.value = controller.text.isBlank == true;
+        update();
+      }
 
+     // Get.showSnackbar(GetSnackBar(title: "controller: ",message: validate.value.toString()));
     });
   }
   
