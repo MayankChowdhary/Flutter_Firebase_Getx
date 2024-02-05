@@ -25,4 +25,13 @@ class WidgetsTheme{
       duration: const Duration(seconds: 3),
     );
   }
+  static GetSnackBar getSnackbarInfo(String message){
+    return  GetSnackBar(
+      title: "Info",
+      message: message,
+      backgroundColor: Colors.blueGrey,
+      icon: const Icon(Icons.info,color: Colors.greenAccent,),
+      duration: const Duration(seconds: 3),
+    );
+  }
 }

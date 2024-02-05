@@ -36,11 +36,16 @@ class OTPPage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      const Align(
+                       Align(
                         alignment: Alignment.centerRight,
-                        child: Text("Did not get OTP, resend?",
-                            style: TextStyle(
-                                color: Colors.blueAccent, fontSize: 14)),
+                        child: GestureDetector(
+                          onTap:() {
+                             Get.showSnackbar(WidgetsTheme.getSnackbarInfo("resending OTP..."));
+                          },
+                          child: const Text("Did not get OTP, resend?",
+                              style: TextStyle(
+                                  color: Colors.blueAccent, fontSize: 14)),
+                        ),
                       ),
                       const SizedBox(height: 60),
                       ElevatedButton(
