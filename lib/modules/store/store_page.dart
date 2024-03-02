@@ -16,20 +16,22 @@ class StorePage extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Container(
-            height: MediaQuery.of(context).size.height-50,
+            height: MediaQuery.of(context).size.height - 100,
             padding: const EdgeInsets.all(40),
             color: WidgetsTheme.colorSecondary,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                RadioCustom("Text Widget",controller),
+                const SizedBox(height: 50),
+                RadioCustom("Text Widget", controller),
                 const SizedBox(
                   height: 50,
                 ),
-                RadioCustom("Image Widget",controller),
+                RadioCustom("Image Widget", controller),
                 const SizedBox(
                   height: 50,
                 ),
-                RadioCustom("Button Widget",controller),
+                RadioCustom("Button Widget", controller),
                 Flexible(
                     fit: FlexFit.loose,
                     child: Container(
