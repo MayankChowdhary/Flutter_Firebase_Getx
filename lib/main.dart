@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_getx/modules/home/home_Binding.dart';
+import 'package:flutter_firebase_getx/modules/home/home_page.dart';
 import 'package:get/get.dart';
 import 'package:flutter_firebase_getx/modules/login/login_Binding.dart';
 import 'package:flutter_firebase_getx/modules/login/login_page.dart';
@@ -20,8 +22,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Video Recorder Demo',
       theme: ThemeData(primarySwatch: Colors.yellow),
-      initialBinding: LoginBinding(),
-      home: const LoginPage(),
+      initialBinding: HomeBinding(),
+      home: const HomePage(),
       getPages: AppPages.pages,
     );
   }

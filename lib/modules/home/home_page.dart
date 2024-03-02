@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_getx/utils/widgets_theme.dart';
 import 'package:get/get.dart';
 import 'package:flutter_firebase_getx/modules/home/home_controller.dart';
 
@@ -10,10 +11,79 @@ class HomePage extends StatelessWidget {
     return GetBuilder<HomeController>(
       builder: (controller) => Scaffold(
         appBar: AppBar(
-          title: const Text('Video Recorder'),
+          title: const Center(child: Text('Home Screen')),
         ),
-        body: const Center(
-          child: Text('Tap to Record!'),
+        body: SingleChildScrollView(
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height - 80,
+            child: Column(children: [
+              Expanded(
+                  child: Container(
+                margin: const EdgeInsets.only(left: 30, right: 30),
+                padding: const EdgeInsets.all(10),
+                width: double.infinity,
+                color: WidgetsTheme.colorSecondary,
+                child: controller.isWidgetEmpty.value == true
+                    ? const Center(
+                        child: Text(
+                        "No Widget is added",
+                        style: TextStyle(
+                            color: WidgetsTheme.colorOnSecondary, fontSize: 22),
+                      ))
+                    : Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const TextField(
+                            decoration: InputDecoration(
+                              filled: true,
+                              fillColor: Colors.white,
+                              border: OutlineInputBorder(),
+                              labelText: 'Text Data',
+                              hintText: 'Enter Text',
+                            ),
+                          ),
+                          const SizedBox(height: 50),
+                          Card(
+                            elevation: 8,
+                            child: Container(
+                                color: const Color(0xFFE6D8FF),
+                                padding: const EdgeInsets.all(30),
+                                height: 250,
+                                width: double.infinity,
+                                child: const Center(
+                                  child: Text(
+                                    "➕ Add Image",
+                                    style: TextStyle(fontSize: 18),
+                                  ),
+                                )),
+                          ),
+                          const SizedBox(height: 50),
+                          Container(
+                              padding: const EdgeInsets.all(30),
+                              height: 120,
+                              width: double.infinity,
+                              child: ElevatedButton(
+                                  onPressed: () {},
+                                  child: const Text(
+                                    "SAVE",
+                                    style: TextStyle(fontSize: 18),
+                                  )))
+                        ],
+                      ),
+              )),
+              Container(
+                  padding: const EdgeInsets.all(30),
+                  height: 120,
+                  width: double.infinity,
+                  child: ElevatedButton(
+                      style: WidgetsTheme.getRaisedButtonStyle(),
+                      onPressed: () {},
+                      child: const Text(
+                        "Add Widgets",
+                        style: TextStyle(fontSize: 18),
+                      )))
+            ]),
+          ),
         ),
       ),
     );
