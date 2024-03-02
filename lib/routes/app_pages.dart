@@ -1,11 +1,10 @@
 
+import 'package:flutter_firebase_getx/modules/store/store_Binding.dart';
+import 'package:flutter_firebase_getx/modules/store/store_page.dart';
 import 'package:get/get.dart';
-import 'package:flutter_firebase_getx/modules/login/login_Binding.dart';
-import 'package:flutter_firebase_getx/modules/login/otp_page.dart';
 
 import '../modules/home/home_Binding.dart';
 import '../modules/home/home_page.dart';
-import '../modules/login/login_page.dart';
 import 'app_routes.dart';
 
 class AppPages {
@@ -16,14 +15,9 @@ class AppPages {
       binding: HomeBinding(),
     ),
     GetPage(
-      name: AppRoutes.login,
-      page: () => const LoginPage(),
-      binding: LoginBinding(),
-    ),
-    GetPage(
-      name: AppRoutes.otp,
-      page: () =>  const OTPPage(),
-      binding: LoginBinding(),
+      name: AppRoutes.store,
+      page: () => const StorePage(),
+      binding: StoreBinding(),
     ),
   ];
 }

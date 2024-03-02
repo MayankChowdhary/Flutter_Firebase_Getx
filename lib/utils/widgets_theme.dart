@@ -7,6 +7,7 @@ class WidgetsTheme{
 
   static const Color colorPrimary = Colors.blueAccent;
   static const Color colorSecondary = Color(0xFFAADBFF);
+  static const Color colorSecondar = Color(0xFFDEDEDE);
   static const Color colorOnPrimary = Colors.white;
   static const Color colorOnSecondary = Colors.black;
   static ButtonStyle getRaisedButtonStyle({Size size = Constants.mediumButtonSize}) {
