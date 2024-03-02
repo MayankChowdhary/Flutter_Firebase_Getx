@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:video_recorder_flutter_demo/modules/login/login_controller.dart';
-import 'package:video_recorder_flutter_demo/routes/app_routes.dart';
-import 'package:video_recorder_flutter_demo/utils/widgets_theme.dart';
+import 'package:flutter_firebase_getx/modules/login/login_controller.dart';
+import 'package:flutter_firebase_getx/routes/app_routes.dart';
+import 'package:flutter_firebase_getx/utils/widgets_theme.dart';
 
 import '../../utils/constants.dart';
 

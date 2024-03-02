@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:video_recorder_flutter_demo/modules/login/login_Binding.dart';
-import 'package:video_recorder_flutter_demo/modules/login/login_page.dart';
-import 'package:video_recorder_flutter_demo/routes/app_pages.dart';
+import 'package:flutter_firebase_getx/modules/login/login_Binding.dart';
+import 'package:flutter_firebase_getx/modules/login/login_page.dart';
+import 'package:flutter_firebase_getx/routes/app_pages.dart';
 
 
 void main() {

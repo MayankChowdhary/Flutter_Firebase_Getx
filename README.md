@@ -1,4 +1,4 @@
-# video_recorder_flutter_demo
+# flutter_firebase_getx
 
 A new Flutter project.
 

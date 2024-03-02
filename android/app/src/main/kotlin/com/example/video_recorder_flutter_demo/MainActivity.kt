@@ -1,4 +1,4 @@
-package com.example.video_recorder_flutter_demo
+package com.example.flutter_firebase_getx
 
 import io.flutter.embedding.android.FlutterActivity
 
