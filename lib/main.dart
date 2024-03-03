@@ -5,6 +5,8 @@ import 'package:flutter_firebase_getx/modules/home/home_page.dart';
 import 'package:get/get.dart';
 import 'package:flutter_firebase_getx/routes/app_pages.dart';
 
+import 'modules/store/widget_state_arg.dart';
+
 
 void main() {
   runApp(const MyApp());

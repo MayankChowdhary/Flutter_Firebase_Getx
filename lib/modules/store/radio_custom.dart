@@ -3,9 +3,14 @@ import 'package:flutter_firebase_getx/modules/store/store_controller.dart';
 
 class RadioCustom extends StatefulWidget {
   final String name;
+  final String value;
   final StoreController controller;
 
-  const RadioCustom(this.name, this.controller, {Key? key}) : super(key: key);
+  bool isSelected = false;
+
+  RadioCustom(this.name, this.value, this.controller, this.isSelected,
+      {Key? key})
+      : super(key: key);
 
   @override
   State<RadioCustom> createState() => _RadioCustomState();
@@ -23,9 +28,14 @@ class _RadioCustomState extends State<RadioCustom> {
             color: Colors.white,
             child: Radio(
               toggleable: true,
-              value: "male",
-              groupValue: "male",
-              onChanged: (value) {},
+              value: widget.isSelected == true ? widget.value : "",
+              groupValue: widget.value,
+              onChanged: (value) {
+                setState(() {
+                  widget.isSelected = value == null ? false : true;
+                  widget.controller.setIsWidgetSelected(widget.isSelected, widget.value);
+                });
+              },
             ),
           ),
           Expanded(

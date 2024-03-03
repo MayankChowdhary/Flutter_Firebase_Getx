@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_getx/modules/store/widget_state_arg.dart';
 import 'package:flutter_firebase_getx/routes/app_pages.dart';
 import 'package:flutter_firebase_getx/routes/app_routes.dart';
 import 'package:flutter_firebase_getx/utils/widgets_theme.dart';
@@ -64,7 +65,7 @@ class HomePage extends StatelessWidget {
                                       ),
                                     )),
                               ),
-                              SizedBox(height: 30),
+                              const SizedBox(height: 30),
                               Container(
                                   padding: const EdgeInsets.all(30),
                                   height: 120,
@@ -90,7 +91,12 @@ class HomePage extends StatelessWidget {
                 child: ElevatedButton(
                     style: WidgetsTheme.getRaisedButtonStyle(),
                     onPressed: () {
-                      Get.toNamed(AppRoutes.store);
+                      print("Forward Data...");
+                      print("isTextSelected: ${controller.isTextSelected.value}");
+                      print("isImageSelected: ${controller.isImageSelected.value}");
+                      print("isButttonSelected: ${controller.isButtonSelected.value}");
+
+                      Get.offNamed(AppRoutes.store, arguments: WidgetStateArg(controller.isTextSelected.value, controller.isImageSelected.value, controller.isButtonSelected.value));
                     },
                     child: const Text(
                       "Add Widgets",
