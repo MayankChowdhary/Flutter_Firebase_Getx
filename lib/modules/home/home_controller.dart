@@ -100,6 +100,7 @@ class HomeController extends GetxController {
       print("ImageURl: ${imageUrl.value}");
       update();
     } catch (e) {
+      uploadAllData();
       print(e);
     }
 
