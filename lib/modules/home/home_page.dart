@@ -91,11 +91,6 @@ class HomePage extends StatelessWidget {
                 child: ElevatedButton(
                     style: WidgetsTheme.getRaisedButtonStyle(),
                     onPressed: () {
-                      print("Forward Data...");
-                      print("isTextSelected: ${controller.isTextSelected.value}");
-                      print("isImageSelected: ${controller.isImageSelected.value}");
-                      print("isButttonSelected: ${controller.isButtonSelected.value}");
-
                       Get.offNamed(AppRoutes.store, arguments: WidgetStateArg(controller.isTextSelected.value, controller.isImageSelected.value, controller.isButtonSelected.value));
                     },
                     child: const Text(
