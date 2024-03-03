@@ -12,11 +12,6 @@ class StoreController extends GetxController {
     super.onInit();
     argumentData = Get.arguments;
     if(argumentData!=null) {
-      print("Forward received  Data...");
-      print("isTextSelected: ${argumentData.isTextSelected}");
-      print("isImageSelected: ${argumentData.isImageSelected}");
-      print("isButttonSelected: ${argumentData.isButtonSelected}");
-
       setIsWidgetSelectedArgs(argumentData as WidgetStateArg);
     }
   }
@@ -25,15 +20,12 @@ class StoreController extends GetxController {
     switch (name) {
       case 'Text':
         isTextSelected(isSelected);
-        print("Text selection: $isSelected");
         break;
       case 'Image':
         isImageSelected(isSelected);
-        print("Image selection: $isSelected");
         break;
       case 'Button':
         isButtonSelected(isSelected);
-        print("Button selection: $isSelected");
         break;
     }
   }

@@ -15,11 +15,6 @@ class HomeController extends GetxController {
     super.onInit();
     argumentData = Get.arguments;
     if(argumentData!=null) {
-      print("Back received  Data...");
-      print("isTextSelected: ${argumentData.isTextSelected}");
-      print("isImageSelected: ${argumentData.isImageSelected}");
-      print("isButttonSelected: ${argumentData.isButtonSelected}");
-
       setIsWidgetSelectedArgs(argumentData as WidgetStateArg);
     }
   }
