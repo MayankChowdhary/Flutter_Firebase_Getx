@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_firebase_getx/modules/store/widget_state_arg.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 
 class HomeController extends GetxController {
   late dynamic argumentData;
@@ -13,6 +14,8 @@ class HomeController extends GetxController {
   final textDataController = TextEditingController();
 
   var addMoreMessage = false.obs;
+  final ImagePicker imagePicker = ImagePicker();
+  XFile? imagePath;
 
   @override
   void onInit() {
@@ -54,6 +57,11 @@ class HomeController extends GetxController {
     } else {
       isWidgetEmpty(false);
     }
+    update();
+  }
+
+  Future getImage() async {
+    imagePath = await imagePicker.pickImage(source: ImageSource.gallery);
     update();
   }
 }

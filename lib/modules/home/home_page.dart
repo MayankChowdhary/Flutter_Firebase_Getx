@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase_getx/modules/store/widget_state_arg.dart';
 import 'package:flutter_firebase_getx/routes/app_pages.dart';
@@ -63,7 +65,7 @@ class HomePage extends StatelessWidget {
                               if (controller.isTextSelected.isTrue)
                                 Container(
                                     margin: const EdgeInsets.only(top: 20),
-                                    child:  TextField(
+                                    child: TextField(
                                       controller: controller.textDataController,
                                       decoration: const InputDecoration(
                                         filled: true,
@@ -83,12 +85,24 @@ class HomePage extends StatelessWidget {
                                         padding: const EdgeInsets.all(30),
                                         height: 250,
                                         width: double.infinity,
-                                        child: const Center(
-                                          child: Text(
-                                            "➕ Add Image",
-                                            style: TextStyle(fontSize: 18),
-                                          ),
-                                        )),
+                                        child: GestureDetector(
+                                            onTap: () {
+                                              controller.getImage();
+                                            },
+                                            child: Center(
+                                                child:
+                                                    controller.imagePath == null
+                                                        ? const Text(
+                                                            "➕ Add Image",
+                                                            style: TextStyle(
+                                                                fontSize: 18),
+                                                          )
+                                                        : Image.file(
+                                                            File(controller
+                                                                .imagePath!
+                                                                .path),
+                                                            fit: BoxFit.cover,
+                                                          )))),
                                   ),
                                 ),
                               if (controller.isButtonSelected.isTrue)
