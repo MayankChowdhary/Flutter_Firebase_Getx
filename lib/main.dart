@@ -1,4 +1,5 @@
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_firebase_getx/modules/home/home_Binding.dart';
 import 'package:flutter_firebase_getx/modules/home/home_page.dart';
@@ -8,7 +9,9 @@ import 'package:flutter_firebase_getx/routes/app_pages.dart';
 import 'modules/store/widget_state_arg.dart';
 
 
-void main() {
+void main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

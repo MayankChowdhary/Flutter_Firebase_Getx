@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1050317684258",
+    "project_id": "flutterfirebasegetx-dc999",
+    "storage_bucket": "flutterfirebasegetx-dc999.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050317684258:android:b5bf9f49bdab1fe113547b",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firebase_getx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbB-o_S8tcbKp1oMpWp1TfeVX5dAlJQCE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

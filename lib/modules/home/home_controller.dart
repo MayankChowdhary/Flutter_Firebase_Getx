@@ -1,9 +1,18 @@
+import 'dart:io';
+
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_firebase_getx/modules/store/widget_state_arg.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class HomeController extends GetxController {
+
+
+   Reference? storageImageDir ;
+  late Reference storageImageRef ;
+
+  var imageUrl = "".obs;
   late dynamic argumentData;
 
   var isWidgetEmpty = true.obs;
@@ -26,6 +35,12 @@ class HomeController extends GetxController {
       setIsWidgetSelectedArgs(argumentData as WidgetStateArg);
     }
     setIsEmpty();
+
+      var storage = FirebaseStorage.instanceFor(
+          bucket: "gs://flutterfirebasegetx-dc999.appspot.com");
+      var storageRoot = storage.ref();
+      storageImageDir = storageRoot.child("images");
+
   }
 
   void setIsWidgetSelected(bool isSelected, String name) {
@@ -63,5 +78,24 @@ class HomeController extends GetxController {
   Future getImage() async {
     imagePath = await imagePicker.pickImage(source: ImageSource.gallery);
     update();
+  }
+
+  void uploadImage() async{
+    if(storageImageDir==null) {
+      Get.snackbar("Error", "Firebase initialization failed!");
+      return;
+    }
+    var fileName = "img_sample.jpg";
+    storageImageRef = storageImageDir!.child(fileName);
+    try {
+      await storageImageRef.putFile(File(imagePath!.path));
+      imageUrl.value = await storageImageRef.getDownloadURL ();
+      Get.snackbar("Firebase message", "Image Successfully Uploaded");
+      print("ImageURl: ${imageUrl.value}");
+      update();
+    } catch (e) {
+      print(e);
+    }
+
   }
 }

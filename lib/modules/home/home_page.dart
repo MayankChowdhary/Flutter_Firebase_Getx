@@ -119,6 +119,8 @@ class HomePage extends StatelessWidget {
                                                   .isTextSelected.isFalse) {
                                             controller.addMoreMessage(true);
                                             controller.update();
+                                          }else{
+                                            controller.uploadImage();
                                           }
                                         },
                                         child: const Text(
