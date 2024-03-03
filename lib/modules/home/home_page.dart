@@ -63,8 +63,9 @@ class HomePage extends StatelessWidget {
                               if (controller.isTextSelected.isTrue)
                                 Container(
                                     margin: const EdgeInsets.only(top: 20),
-                                    child: const TextField(
-                                      decoration: InputDecoration(
+                                    child:  TextField(
+                                      controller: controller.textDataController,
+                                      decoration: const InputDecoration(
                                         filled: true,
                                         fillColor: Colors.white,
                                         border: OutlineInputBorder(),

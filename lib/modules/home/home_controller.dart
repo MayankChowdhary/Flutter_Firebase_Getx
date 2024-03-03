@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_firebase_getx/modules/store/widget_state_arg.dart';
 import 'package:get/get.dart';
 
@@ -8,6 +9,8 @@ class HomeController extends GetxController {
   var isTextSelected = false.obs;
   var isImageSelected = false.obs;
   var isButtonSelected = false.obs;
+
+  final textDataController = TextEditingController();
 
   var addMoreMessage = false.obs;
 
