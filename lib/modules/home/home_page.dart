@@ -90,19 +90,35 @@ class HomePage extends StatelessWidget {
                                               controller.getImage();
                                             },
                                             child: Center(
-                                                child:
-                                                    controller.imagePath == null
-                                                        ? const Text(
-                                                            "➕ Add Image",
-                                                            style: TextStyle(
-                                                                fontSize: 18),
-                                                          )
-                                                        : Image.file(
-                                                            File(controller
-                                                                .imagePath!
-                                                                .path),
-                                                            fit: BoxFit.cover,
-                                                          )))),
+                                                child: (controller.imagePath ==
+                                                            null &&
+                                                        controller
+                                                            .imageUrl.isEmpty)
+                                                    ? const Text(
+                                                        "➕ Add Image",
+                                                        style: TextStyle(
+                                                            fontSize: 18),
+                                                      )
+                                                    : Container(
+                                                        child: (controller
+                                                                    .imagePath
+                                                                    ?.path
+                                                                    .isNotEmpty ==
+                                                                true)
+                                                            ? Image.file(
+                                                                File(controller
+                                                                    .imagePath!
+                                                                    .path),
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              )
+                                                            : Image.network(
+                                                                controller
+                                                                    .imageUrl
+                                                                    .value,
+                                                                fit: BoxFit
+                                                                    .scaleDown,
+                                                              ))))),
                                   ),
                                 ),
                               if (controller.isButtonSelected.isTrue)
@@ -119,7 +135,7 @@ class HomePage extends StatelessWidget {
                                                   .isTextSelected.isFalse) {
                                             controller.addMoreMessage(true);
                                             controller.update();
-                                          }else{
+                                          } else {
                                             controller.uploadImage();
                                           }
                                         },
